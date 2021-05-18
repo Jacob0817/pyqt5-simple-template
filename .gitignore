@@ -1,2 +1,4 @@
 
 *.xmind
+*.sqlite3
+*.pyc
