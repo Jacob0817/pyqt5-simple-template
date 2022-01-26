@@ -1,9 +1,8 @@
 import os, sys
-o_path = os.getcwd() 
+o_path = os.getcwd()
 sys.path.append(o_path)
 from utils.settings import sync_db
 from utils.users.models import User, Group, Auth, AuthPermission
-from peewee import SqliteDatabase
 #from playhouse.migrate import *
 
 def run_create():

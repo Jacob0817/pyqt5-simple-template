@@ -16,7 +16,7 @@ class BaseModel(Model):
             self.create_time = datetime.now()
         self.update_time = datetime.now()
         return super(BaseModel, self).save(*args, **kwargs)
-    
+
     def update(self, *args, **kwargs):
         self.update_time = datetime.now()
         return super(BaseModel, self).update(*args, **kwargs)
@@ -63,14 +63,14 @@ class Group(BaseModel):
     group_type_cn = CharField(max_length=128, verbose_name='用户组类型_cn')
 
     class Meta:
-        table_name = 'Group'
+        db_table = 'DIM_UserGroup'
 
 
 class Auth(BaseModel):
-    auth_type = CharField(max_length=128, verbose_name='权限名称')
+    auth_type = CharField(max_length=128, verbose_name='权限组名称')
 
     class Meta:
-        db_table = 'Auth'
+        db_table = 'DIM_AuthGroup'
 
 
 class AuthPermission(BaseModel):
@@ -83,7 +83,7 @@ class AuthPermission(BaseModel):
     auth_destroy = SmallIntegerField(default=0, verbose_name='删除')
 
     class Meta:
-        db_table = 'AuthPermission'
+        db_table = 'DIM_AuthPermission'
 
 
 class User(BaseModel):
@@ -101,4 +101,4 @@ class User(BaseModel):
     last_login_time = DateTimeField(null=True, verbose_name='上次登录时间')
 
     class Meta:
-        db_table = 'User'
+        db_table = 'FACT_User'

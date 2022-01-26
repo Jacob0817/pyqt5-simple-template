@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 settings = {
     "debug": True,
     "widgets_path": os.path.join(BASE_DIR, "widgets"),
-    "static_path": os.path.join(BASE_DIR, 'static')
+    "assets_path": os.path.join(BASE_DIR, 'assets')
 }
 
 #sync_db = peewee.MySQLDatabase(**DATABASES)
